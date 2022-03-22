@@ -8,6 +8,6 @@ client = mqtt.Client("sensor1")
 while True: 
 	readedText = ser.readline()
 	client.connect(broker_addr)
-	client.publish("Sensor/Charlie/tmp_water",readedText) # 輸入格式:溫度 水位
+	client.publish("Sensor/Charlie/tmp_water",readedText) # Input format : temperature water_level\n
 	print(readedText)
 ser.close()
