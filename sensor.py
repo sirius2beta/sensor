@@ -1,7 +1,7 @@
 import paho.mqtt.client as mqtt
 import serial
 
-ser=serial.Serial('/dev/ttyAMA0',9600)
+ser=serial.Serial('/dev/ttyS0',9600)
 broker_addr = '114.33.252.156'
 client = mqtt.Client("sensor1")
 
