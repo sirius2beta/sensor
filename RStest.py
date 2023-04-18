@@ -1,4 +1,5 @@
 import serial, time
+from bitstring import Bits, BitArray, BitStream, pack
   
 ser = serial.Serial()
 ser.port = "/dev/ttyUSB0"
@@ -34,9 +35,9 @@ if ser.isOpen():
         time.sleep(0.5)  #wait 0.5s
   
         #read 8 byte data
-        response = ser.read(8)[3]
+        response = ser.read(8)[2:4]
         print("read 8 byte data:")
-        print(int(response,8))
+        print(ByteArray(response).float)
   
         ser.close()
     except Exception as e1:
