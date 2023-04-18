@@ -1,5 +1,5 @@
 import serial, time
-from bitstring import Bits, BitArray, BitStream, pack
+from struct import *
   
 ser = serial.Serial()
 ser.port = "/dev/ttyUSB0"
