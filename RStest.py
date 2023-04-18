@@ -1,5 +1,5 @@
-import serial, time
-from struct import *
+import serial, time, struct
+
   
 ser = serial.Serial()
 ser.port = "/dev/ttyUSB0"
