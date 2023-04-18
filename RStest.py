@@ -34,9 +34,9 @@ if ser.isOpen():
         time.sleep(0.5)  #wait 0.5s
   
         #read 8 byte data
-        response = ser.read(8)[2:4]
+        response = ser.read(8)[3]
         print("read 8 byte data:")
-        print(int(response,16))
+        print(int(response,8))
   
         ser.close()
     except Exception as e1:
