@@ -37,7 +37,7 @@ if ser.isOpen():
         #read 8 byte data
         response = ser.read(8)[2:4]
         print("read 8 byte data:")
-        print(ByteArray(response).float)
+        print(BitArray(response).float)
   
         ser.close()
     except Exception as e1:
