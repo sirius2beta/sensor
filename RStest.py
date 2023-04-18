@@ -37,7 +37,7 @@ if ser.isOpen():
         #read 8 byte data
         response = ser.read(7)[2:4]
         print("read 8 byte data:")
-        print(struct.unpack(">H", response))
+        print(int(response))
   
         ser.close()
     except Exception as e1:
