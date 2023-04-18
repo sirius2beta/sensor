@@ -35,7 +35,7 @@ if ser.isOpen():
         time.sleep(0.5)  #wait 0.5s
   
         #read 8 byte data
-        response = ser.read(8)[2:4]
+        response = ser.read(7)[2:4]
         print("read 8 byte data:")
         print(struct.unpack("<h", response))
   
