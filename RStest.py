@@ -38,7 +38,7 @@ if ser.isOpen():
         response = ser.read(7)
         print("read 8 byte data:")
         for i in response:
-                print(int(i, base=16))
+                print(hex(ord(i)))
   
         ser.close()
     except Exception as e1:
