@@ -25,20 +25,21 @@ except Exception as ex:
 if ser.isOpen():
   
     try:
-        ser.flushInput() #flush input buffer
-        ser.flushOutput() #flush output buffer
-                 
-        #write 8 byte data
-        ser.write([01, 03, 00, 00, 00, 01, 132, 10])
-        print("write 8 byte data:01, 03, 00, 00, 00, 01, 84, 0A")
-  
-        time.sleep(0.5)  #wait 0.5s
-  
-        #read 8 byte data
-        response = ser.read(8)
-        print("read 8 byte data:")
-        for i in response:
-                print(hex(ord(i)))
+        while True:
+                ser.flushInput() #flush input buffer
+                ser.flushOutput() #flush output buffer
+
+                #write 8 byte data
+                ser.write([01, 03, 00, 00, 00, 01, 132, 10])
+                print("write 8 byte data:01, 03, 00, 00, 00, 01, 84, 0A")
+
+                time.sleep(0.5)  #wait 0.5s
+
+                #read 8 byte data
+                response = ser.read(8)
+                print("read 8 byte data:")
+                temp = 10*ord(response[3]) + ord(response[4])
+                print("temperature: "+ str(temp))
   
         ser.close()
     except Exception as e1:
