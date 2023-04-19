@@ -39,7 +39,7 @@ if ser.isOpen():
                 response = ser.read(8)
                 print("read 8 byte data:")
                 temp = 256*ord(response[3]) + ord(response[4])
-                print("temperature: "+ str(temp/10))
+                print(f"temperature: {temp/10}")
   
         ser.close()
     except Exception as e1:
