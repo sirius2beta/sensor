@@ -38,7 +38,7 @@ if ser.isOpen():
                 #read 8 byte data
                 response = ser.read(8)
                 print("read 8 byte data:")
-                print(len(response[3]))
+                #print(len(response[3]))
                 temp = response[3]*256 + response[4]
                 print(f"temperature: {temp/10}")
   
