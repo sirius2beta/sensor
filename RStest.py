@@ -30,7 +30,7 @@ if ser.isOpen():
                 ser.flushOutput() #flush output buffer
 
                 #write 8 byte data
-                ser.write([01, 03, 00, 00, 00, 01, 132, 10])
+                ser.write([1, 3, 0, 0, 0, 1, 132, 10])
                 #print("write 8 byte data:01, 03, 00, 00, 00, 01, 84, 0A")
 
                 time.sleep(0.5)  #wait 0.5s
