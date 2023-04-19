@@ -27,7 +27,7 @@ if ser.isOpen():
     try:
         ser.flushInput() #flush input buffer
         ser.flushOutput() #flush output buffer
-  
+                 
         #write 8 byte data
         ser.write([01, 03, 00, 00, 00, 01, 132, 10])
         print("write 8 byte data:01, 03, 00, 00, 00, 01, 84, 0A")
@@ -35,9 +35,10 @@ if ser.isOpen():
         time.sleep(0.5)  #wait 0.5s
   
         #read 8 byte data
-        response = ser.read(7)[3]
+        response = ser.read(7)
         print("read 8 byte data:")
-        print(ord(response))
+        for i in response:
+                print(int(i, base=16), end=' ')
   
         ser.close()
     except Exception as e1:
