@@ -35,7 +35,7 @@ if ser.isOpen():
         time.sleep(0.5)  #wait 0.5s
   
         #read 8 byte data
-        response = ser.read(7)
+        response = ser.read(8)
         print("read 8 byte data:")
         for i in response:
                 print(hex(ord(i)))
